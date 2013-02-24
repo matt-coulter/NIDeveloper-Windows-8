@@ -60,7 +60,12 @@ namespace NIDeveloperW8
             // Navigate to the appropriate destination page, configuring the new page
             // by passing required information as a navigation parameter
             int groupId = ((BlogPostModel)e.ClickedItem).ID;
-            this.Frame.Navigate(typeof(SplitPage), groupId);
+            String blogPostName = ((BlogPostModel)e.ClickedItem).Name;
+            Dictionary<String, Object> parameters = new Dictionary<String, Object>();
+            parameters.Add("blog_post_id", groupId);
+            parameters.Add("blog_post_name", blogPostName);
+
+            this.Frame.Navigate(typeof(SplitPage), parameters);
         }
     }
 }

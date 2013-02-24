@@ -41,7 +41,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Back button and page title -->
-        <Grid x:Name="titlePanel">
+        <Grid x:Name="titlePanel" Grid.ColumnSpan="2" Margin="0,0,10,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>

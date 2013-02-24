@@ -89,9 +89,10 @@ namespace NIDeveloperW8
             // which we catch and let the user know that the URL is bad and to enter a new well-formed one.
             try
             {
-                Uri targetUri = new Uri("http://www.nideveloper.co.uk/blog/post/" + navigationParameter);
+                Dictionary<String, Object> parameters = (Dictionary<String, Object>)navigationParameter;
+                Uri targetUri = new Uri("http://www.nideveloper.co.uk/blog/post/" + parameters["blog_post_id"]);
                 WebView1.Navigate(targetUri);
-                pageTitle.Text = "Test";
+                pageTitle.Text = (String)parameters["blog_post_name"];
             }
             catch (FormatException myE)
             {
